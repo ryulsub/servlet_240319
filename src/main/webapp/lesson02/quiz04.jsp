@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,15 +13,19 @@
 		<div class="container">
 			<h1>길이 변환</h1>
 			
-			<form method="get" action="/lesson02/quiz04_1.jsp">
+			<form method="post" action="/lesson02/quiz04_1.jsp">
 				<div class="d-flex align-items-end">
-					<input type="text" name="length" class="form-control col-2" placeholder="길이를 입력하세요">cm<br>
-					<br><label>인치 <input type="checkbox" name="length" value="인치"></label>
-					<label>야드 <input type="checkbox" name="length" value="야드"></label>
-					<label>피트 <input type="checkbox" name="length" value="피트"></label>
-					<label>미터 <input type="checkbox" name="length" value="미터"></label>
-					<input type="submit" class="btn btn-success mt-2" value="변환">
+					<input type="text" name="length" class="form-control col-2" placeholder="길이를 입력하세요">cm
 				</div>
+				
+				<div>
+					<label>인치 <input type="checkbox" name="type" value="인치"></label>
+					<label>야드 <input type="checkbox" name="type" value="야드"></label>
+					<label>피트 <input type="checkbox" name="type" value="피트"></label>
+					<label>미터 <input type="checkbox" name="type" value="미터"></label>
+				</div>
+							
+				<input type="submit" class="btn btn-success mt-2" value="변환하기">
 			</form>
 		</div>
 </body>
