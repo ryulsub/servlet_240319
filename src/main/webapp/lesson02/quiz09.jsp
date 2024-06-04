@@ -63,16 +63,16 @@
 	
 	<div id="wrap" class="container">
 		<header class=" d-flex justify-content-center align-items-center">
-			<h2 class=" font-weight-bold">SK BroadBand IPTV</h2>
+			<h2 class="text-danger font-weight-bold ">SK BroadBand IPTV</h2>
 		</header>
 		<nav class="bg-danger d-flex align-items-center">
 		 	<ul class="nav nav-fill w-100">
-		 		<li class="nav-item"><a href="#" class="nav-link">전체</a></li>
-		 		<li class="nav-item"><a href="#" class="nav-link">지상파</a></li>
-		 		<li class="nav-item"><a href="#" class="nav-link">드라마</a></li>
-		 		<li class="nav-item"><a href="#" class="nav-link">예능</a></li>
-		 		<li class="nav-item"><a href="#" class="nav-link">영화</a></li>
-		 		<li class="nav-item"><a href="#" class="nav-link">스포츠</a></li>
+		 		<li class="nav-item"><a href="/lesson02/quiz09.jsp" class="nav-link">전체</a></li>
+		 		<li class="nav-item"><a href="/lesson02/quiz09.jsp?category=지상파" class="nav-link">지상파</a></li>
+		 		<li class="nav-item"><a href="/lesson02/quiz09.jsp?category=드라마" class="nav-link">드라마</a></li>
+		 		<li class="nav-item"><a href="/lesson02/quiz09.jsp?category=예능" class="nav-link">예능</a></li>
+		 		<li class="nav-item"><a href="/lesson02/quiz09.jsp?category=영화" class="nav-link">영화</a></li>
+		 		<li class="nav-item"><a href="/lesson02/quiz09.jsp?category=스포츠" class="nav-link">스포츠</a></li>
 		 	</ul>
 		</nav>
 		<section class="contents ">
@@ -86,7 +86,12 @@
 				</thead>
 				<tbody>
 				<%
+					// request param
+					String category = request.getParameter("category");
+				
 					for (Map<String, String> item : list) {
+						if (category == null || category.equals(item.get("category"))) {
+						// 카테고리 null(전체) 또는 카테고리 일치 하는 행
 				%>
 					<tr>
 						<td><%= item.get("ch") %></td>
@@ -94,6 +99,7 @@
 						<td><%= item.get("category") %></td>
 					</tr>
 				<%
+						}
 					}
 				%>	
 				</tbody>
