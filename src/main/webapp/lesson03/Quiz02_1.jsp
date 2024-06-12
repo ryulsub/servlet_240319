@@ -27,6 +27,7 @@
 			<tr>
 				<th>사이트</th>
 				<th>사이트 주소</th>
+				<th>삭제</th>
 			</tr>	
 	</thead>
 	<tbody>
